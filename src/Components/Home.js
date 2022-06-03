@@ -6,7 +6,7 @@ const Home = ({user}) => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch('http://refertest.pythonanywhere.com/job/openings', {
+        fetch('https://refertest.pythonanywhere.com/job/openings', {
             Headers: {
                 "tid": 3441
             }

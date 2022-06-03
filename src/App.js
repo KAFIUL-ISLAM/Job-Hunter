@@ -8,7 +8,7 @@ function App() {
 
   const [user, setUser] = useState({});
   useEffect(() => {
-    fetch('http://refertest.pythonanywhere.com/user/data', {
+    fetch('https://refertest.pythonanywhere.com/user/data', {
       Headers: {
         "uid": 136
       }
