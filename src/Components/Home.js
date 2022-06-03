@@ -16,7 +16,7 @@ const Home = ({user}) => {
     }, []);
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-7 border-2 gap-2'>
+        <div className='grid grid-cols-1 md:grid-cols-7 gap-2'>
             <div className='col-span-2'>
                 <h1 className='text-center text-4xl font-bold uppercase mt-8'>Welcome!</h1>
                 <div className='text-center p-12 space-y-4'>
