@@ -16,12 +16,11 @@ function App() {
       .then(response => response.json())
       .then(data => setUser(data.data));
   }, []);
-  console.log(user);
 
   return (
     <div>
       <Header user={user}></Header>
-      <Home></Home>
+      <Home user={user}></Home>
       <Footer></Footer>
     </div>
   );
