@@ -10,8 +10,12 @@ const Job = ({ job }) => {
                 <span className='font-serif text-slate-600'>{company}</span>
                 <h2 className="card-title text-2xl">{designation}</h2>
                 <div>
-                    <p>Job Location: <span className='font-semibold'>{location}</span></p>
-                    <p>Required Experience: <span className='font-semibold'>{min_experience}</span></p>
+                    <p className='mb-2'>Job Location: <span className='font-semibold'>{location}</span></p>
+                    <p>{min_experience === 0 ? 
+                        <span>Opening for <span className='text-red-500 font-semibold'>Fresher </span></span>
+                        :
+                        <span>Minimum <span className='font-semibold'>{min_experience} </span> years of experience required</span>
+                    }</p>
                 </div>
                 <div className='mt-3'>
                     {
