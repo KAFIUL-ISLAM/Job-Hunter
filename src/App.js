@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import Home from './Components/Home';
 
 function App() {
+
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    fetch('http://refertest.pythonanywhere.com/user/data', {
+      Headers: {
+        "uid": 136
+      }
+    })
+      .then(response => response.json())
+      .then(data => setUser(data.data));
+  }, []);
+  console.log(user);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header user={user}></Header>
+      <Home></Home>
+      <Footer></Footer>
     </div>
   );
 }
